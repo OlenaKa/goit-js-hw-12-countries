@@ -1,6 +1,9 @@
 const debounce = require('debounce');
 import multyCountriesTemplate from '../templates/multycountries.hbs'
 import oneCountryTemplate from '../templates/onecountry.hbs'
+const { error } = require('@pnotify/core');
+const { defaults } = require('@pnotify/core');
+
 
 console.log(multyCountriesTemplate());
 console.log(oneCountryTemplate());
@@ -29,6 +32,19 @@ function checkCountries (countries) {
     console.log(countries);
     oneCountryTemplate(countries)
     countriesRef.innerHTML = oneCountryTemplate(...countries)
-  } 
+  } else if (numberOfCountries > 10) {
+    showAlert()
+  }
 }
 
+function showAlert (){
+  defaults.closer = false;
+  defaults.sticker = false;
+  defaults.width = '300px';
+  defaults.delay = 80000;
+
+  error ({
+    text: 'Too many matches found. Please enter a more specific query!'
+  })
+
+}
