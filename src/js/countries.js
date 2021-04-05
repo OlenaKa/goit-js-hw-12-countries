@@ -1,8 +1,9 @@
 const debounce = require('debounce');
 import multyCountriesTemplate from '../templates/multycountries.hbs'
+import oneCountryTemplate from '../templates/onecountry.hbs'
 
 console.log(multyCountriesTemplate());
-
+console.log(oneCountryTemplate());
 
 const inputRef = document.querySelector('input');
 const countriesRef = document.querySelector('.countries')
@@ -20,13 +21,14 @@ function onInput (value) {
 
 function checkCountries (countries) {
   const numberOfCountries = countries.length
-
+  console.log(numberOfCountries);
   if (numberOfCountries > 1 && numberOfCountries <= 10) {
     console.log(countries);
     countriesRef.innerHTML = multyCountriesTemplate(countries)
-  }
-  // if (numberOfCountries = 1){
-
-  // } else 
+  } else if (numberOfCountries === 1){
+    console.log(countries);
+    oneCountryTemplate(countries)
+    countriesRef.innerHTML = oneCountryTemplate(...countries)
+  } 
 }
 

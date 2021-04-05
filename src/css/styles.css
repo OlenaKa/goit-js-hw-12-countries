@@ -8,10 +8,50 @@ input {
   border: 2px solid rgb(5, 175, 5);
   border-radius: 4px;
 }
+img {
+  display: block;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
 .countries-list {
   font-size: 22px;
   line-height: 1.5em;
   margin-right: auto;
   margin-left: auto;
   width: fit-content;
+}
+h1 {
+  text-align: center;
+}
+
+.main-info {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(2, 20%);
+  grid-template-rows: 50px 50px 150px;
+  list-style: none;
+  font-size: 20px;
+  line-height: 1.5em;
+}
+
+.prop-name {
+  font-weight: 700;
+}
+.capital {
+  grid-column: 1;
+  grid-row: 1;
+}
+.population {
+  grid-column: 1;
+  grid-row: 2;
+}
+.languages {
+  grid-column: 1;
+  grid-row: 3;
+}
+
+.flag {
+  grid-column: 2;
+  grid-row: 1/3;
 }
