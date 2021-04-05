@@ -1,0 +1,17 @@
+input {
+  display: block;
+  margin: 30px auto;
+  width: 30%;
+  line-height: 1.5em;
+  font-size: 20px;
+  padding: 10px;
+  border: 2px solid rgb(5, 175, 5);
+  border-radius: 4px;
+}
+.countries-list {
+  font-size: 22px;
+  line-height: 1.5em;
+  margin-right: auto;
+  margin-left: auto;
+  width: fit-content;
+}
