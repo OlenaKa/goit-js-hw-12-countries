@@ -14,7 +14,7 @@ document.addEventListener('input', debounce(e=>onInput(inputRef.value), 500));
 
 function findCountries (value) {
   const requestRef = `https://restcountries.eu/rest/v2/name/${value}`;
-  return fetch(requestRef).then(res=>res.json()).then(res=>res);
+  return fetch(requestRef).then(res=>res.json());
 }
 
 function onInput (value) {
